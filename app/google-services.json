@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "649543769670",
+    "firebase_url": "https://fir-eb3af.firebaseio.com",
+    "project_id": "fir-eb3af",
+    "storage_bucket": "fir-eb3af.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:649543769670:android:59ea936a32ca8867",
+        "android_client_info": {
+          "package_name": "com.example.arshdeepsangha.android_login"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "649543769670-haj2fqi90arsode81jekhcj4btqvrm7p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCK7LZb-kN4CshffDiGjzztD3paunODZIA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
