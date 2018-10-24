@@ -7,13 +7,13 @@
     tools:context=".registerActivity">
 
     <EditText
-        android:id="@+id/etUsername"
+        android:id="@+id/etEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView4"
         android:layout_alignStart="@+id/etPasswordRegister"
         android:ems="10"
-        android:hint="Username"
+        android:hint="Email"
         android:inputType="textPersonName" />
 
     <Button
@@ -32,16 +32,17 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="104dp"
-        android:text="Username:" />
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="106dp"
+        android:text="Email:" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/etPasswordRegister"
-        android:layout_alignEnd="@+id/textView4"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="33dp"
         android:text="Password:" />
 
     <TextView
@@ -58,11 +59,10 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="87dp"
-        android:layout_marginTop="21dp"
-        android:text="Register Account"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp"
+        android:text="Register Demo"
         android:textColor="@android:color/background_dark"
         android:textSize="25sp" />
 

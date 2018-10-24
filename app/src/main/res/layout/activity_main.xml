@@ -10,9 +10,10 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/etName"
-        android:layout_alignStart="@+id/textView2"
-        android:text="Username:"
+        android:layout_alignBottom="@+id/etEmailLog"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="53dp"
+        android:text="Email:"
         tools:layout_editor_absoluteX="45dp"
         tools:layout_editor_absoluteY="137dp" />
 
@@ -28,7 +29,7 @@
         tools:layout_editor_absoluteY="201dp" />
 
     <EditText
-        android:id="@+id/etName"
+        android:id="@+id/etEmailLog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -84,7 +85,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/etName"
+        android:layout_alignStart="@+id/etEmailLog"
         android:layout_marginTop="186dp"
         android:ems="10"
         android:hint="Password"
