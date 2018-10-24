@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.arshdeepsangha.android_login">
 
+    //Added Internet connection.
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application

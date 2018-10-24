@@ -30,7 +30,6 @@ dependencies {
     //added this for authorization purposes.
     implementation 'com.google.firebase:firebase-auth:16.0.1'
 
-    //implementation'com.google.firebase:firebase-auth:16.0.4'
 
 }
 
