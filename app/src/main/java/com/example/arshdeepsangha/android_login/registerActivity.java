@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -21,6 +22,7 @@ public class registerActivity extends AppCompatActivity {
     private String password;
     private Button btnRegisterAccount;
     private FirebaseAuth firebaseAuth;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +30,7 @@ public class registerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         firebaseAuth = FirebaseAuth.getInstance();
-
+        progressBar = findViewById(R.id.progressBar);
         etEmail = findViewById(R.id.etEmail);
         etPasswordRegister = findViewById(R.id.etPasswordRegister);
         etRePassword = findViewById(R.id.etRePassword);
@@ -70,6 +72,8 @@ public class registerActivity extends AppCompatActivity {
         }
         else
         {
+            progressBar.setVisibility(View.VISIBLE);
+            progressBar.isShown();
             firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>()
             {
                 @Override
@@ -81,6 +85,7 @@ public class registerActivity extends AppCompatActivity {
                     else
                     {
                         Toast.makeText(registerActivity.this,"Registration Unsuccessful!", Toast.LENGTH_LONG).show();
+                        progressBar.setVisibility(View.INVISIBLE);
                     }
 
                 }
