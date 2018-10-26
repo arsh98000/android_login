@@ -81,6 +81,7 @@ public class registerActivity extends AppCompatActivity {
                 {
                     if(task.isSuccessful()){
                         Toast.makeText(registerActivity.this,"Registration Successful!", Toast.LENGTH_LONG).show();
+                        progressBar.setVisibility(View.INVISIBLE);
                     }
                     else
                     {
