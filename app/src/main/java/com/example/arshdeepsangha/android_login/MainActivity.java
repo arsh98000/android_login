@@ -87,6 +87,8 @@ public class MainActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful())
                     {
+                        // Added this feature for Demo 2,
+                        //This is to verify if the user has clicked on the link they got in their mail.
                         if(firebaseAuth.getCurrentUser().isEmailVerified())
                         {
                             finish();

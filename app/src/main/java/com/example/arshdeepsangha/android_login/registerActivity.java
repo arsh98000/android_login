@@ -81,11 +81,13 @@ public class registerActivity extends AppCompatActivity {
                 {
                     if(task.isSuccessful()){
 
+                        // Added this feature for Demo 2,
+                        //Sends an email to user for verification.
                         firebaseAuth.getCurrentUser().sendEmailVerification().
                                 addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
-
+                                        //If successful , then sends email to the user.
                                         if (task.isSuccessful())
                                         {
                                             Toast.makeText(registerActivity.this,"Registration Successful! , We have sent a verfication email. Please verify.", Toast.LENGTH_LONG).show();
