@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnRegister;
     private String email;
     private String password;
+    private ProgressBar progressBar2;
 
     private FirebaseAuth firebaseAuth;
 
@@ -30,13 +32,13 @@ public class MainActivity extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         firebaseAuth = FirebaseAuth.getInstance();
 
         etEmail = findViewById(R.id.etEmailLog);
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
         btnRegister = findViewById(R.id.btnRegister);
+        progressBar2 = findViewById(R.id.progressBar2);
 
         btnLogin.setOnClickListener(new View.OnClickListener()
         {
@@ -67,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void validate()
     {
+
         if (email.equals("") || password.equals(""))
         {
             Toast.makeText(this,"Please fill in the requirements", Toast.LENGTH_LONG).show();
@@ -77,6 +80,8 @@ public class MainActivity extends AppCompatActivity {
         }
         else
         {
+            progressBar2.setVisibility(View.VISIBLE);
+            progressBar2.isShown();
             firebaseAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
@@ -90,11 +95,11 @@ public class MainActivity extends AppCompatActivity {
                     else
                     {
                         Toast.makeText(MainActivity.this,"Login Failed , Please try again !", Toast.LENGTH_LONG).show();
+                        progressBar2.setVisibility(View.INVISIBLE);
                     }
                 }
             });
 
         }
     }
-
 }

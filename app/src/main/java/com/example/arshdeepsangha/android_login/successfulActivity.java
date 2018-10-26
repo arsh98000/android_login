@@ -1,8 +1,8 @@
 package com.example.arshdeepsangha.android_login;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -15,6 +15,8 @@ public class successfulActivity extends AppCompatActivity
     private TextView txtEmail;
     private Button btnSignout;
     private FirebaseAuth firebaseAuth;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
