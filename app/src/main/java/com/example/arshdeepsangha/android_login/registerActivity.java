@@ -80,12 +80,32 @@ public class registerActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task)
                 {
                     if(task.isSuccessful()){
-                        Toast.makeText(registerActivity.this,"Registration Successful!", Toast.LENGTH_LONG).show();
-                        progressBar.setVisibility(View.INVISIBLE);
+
+                        firebaseAuth.getCurrentUser().sendEmailVerification().
+                                addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+
+                                        if (task.isSuccessful())
+                                        {
+                                            Toast.makeText(registerActivity.this,"Registration Successful! , We have sent a verfication email. Please verify.", Toast.LENGTH_LONG).show();
+                                            progressBar.setVisibility(View.INVISIBLE);
+                                            etEmail.setText("");
+                                            etPasswordRegister.setText("");
+                                            etRePassword.setText("");
+                                        }
+                                        else
+                                        {
+                                            Toast.makeText(registerActivity.this,task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                                            progressBar.setVisibility(View.INVISIBLE);
+                                        }
+                                    }
+                                });
+
                     }
                     else
                     {
-                        Toast.makeText(registerActivity.this,"Registration Unsuccessful!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(registerActivity.this,"Registration Unsuccessful! " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
                         progressBar.setVisibility(View.INVISIBLE);
                     }
 
