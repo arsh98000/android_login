@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText etPassword;
     private Button btnLogin;
     private Button btnRegister;
+    private Button btnForgot;
     private String email;
     private String password;
     private ProgressBar progressBar2;
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
         btnRegister = findViewById(R.id.btnRegister);
+        btnForgot = findViewById(R.id.btnForgot);
         progressBar2 = findViewById(R.id.progressBar2);
 
         btnLogin.setOnClickListener(new View.OnClickListener()
@@ -55,6 +57,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v)
             {
                 Intent intent = new Intent(MainActivity.this,registerActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnForgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,forgotPasswordActivity.class);
                 startActivity(intent);
             }
         });
